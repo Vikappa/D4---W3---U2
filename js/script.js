@@ -15,7 +15,10 @@ const refreshScreen = function () {
     document.getElementById('mainRow').innerHTML = innerHtmlCards
 }
 
-
+const removeCard = function (id) {
+    screenCards.splice(id, 1)
+    refreshScreen()
+}
 
 const getPicWithQuery = function (query) {
 
@@ -32,14 +35,10 @@ const getPicWithQuery = function (query) {
             }
         })
         .then((data) => {
-            console.log(data.photos[Math.floor(Math.random() * 16)])
-            console.log(data.photos[Math.floor(Math.random() * 16)].src)
-
-
             screenCards.push(
-                buildCard(data.photos[Math.floor(Math.random() * 16)].alt,
+                buildCard(screenCards.length,
+                    data.photos[Math.floor(Math.random() * 16)].alt,
                     data.photos[Math.floor(Math.random() * 16)].src.medium)
-
             )
             refreshScreen()
             return data
@@ -50,9 +49,9 @@ const getPicWithQuery = function (query) {
 
 }
 
-const buildCard = function (title = "Lorem Ipsum", src = "https://picsum.photos/id/237/300/200") {
+const buildCard = function (id, title = "Lorem Ipsum", src = "https://picsum.photos/id/237/300/200") {
     let mockup =
-        `<div class="col-md-4">
+        `<div class="col-md-4" id=${id}>
     <div class="card mb-4 shadow-sm">
         <img src="${src}" class="bd-placeholder-img card-img-top" />
         <div class="card-body">
@@ -67,8 +66,8 @@ const buildCard = function (title = "Lorem Ipsum", src = "https://picsum.photos/
                     <button type="button" class="btn btn-sm btn-outline-secondary">
                         View
                     </button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">
-                        Edit
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick=removeCard(${id})>
+                        Hide
                     </button>
                 </div>
                 <small class="text-muted">9 mins</small>
@@ -83,7 +82,7 @@ const buildCard = function (title = "Lorem Ipsum", src = "https://picsum.photos/
 const pageFirstLoad = function () {
     let innerHtmlCards = ``
     for (let index = 0; index < 15; index++) {
-        screenCards.push(buildCard())
+        screenCards.push(buildCard(index))
         innerHtmlCards = innerHtmlCards + screenCards[index]
     }
 
@@ -98,7 +97,7 @@ firstButton.addEventListener('click', function () {
 })
 
 secondButton.addEventListener('click', function () {
-    getPicWithQuery("Aliens")
+    getPicWithQuery("Ghost")
 })
 
 pageFirstLoad()
