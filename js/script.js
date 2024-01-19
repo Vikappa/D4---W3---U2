@@ -117,12 +117,13 @@ const pageFirstLoad = function () {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 pageFirstLoad()
 
-document.getElementById('ricerca').addEventListener('submit', function () {
+document.getElementById('ricerca').addEventListener('input', function () {
+    console.log("aa")
     getPicWithQuery(document.getElementById('campoRicerca').value, URL)
 
 })
 
-document.getElementById('mobileSearch').addEventListener('submit', function () {
+document.getElementById('mobileSearch').addEventListener('input', function () {
     getPicWithQuery(document.getElementById('mobileCasella').value, URL)
 
 })
