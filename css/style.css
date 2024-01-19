@@ -1,0 +1,14 @@
+html {
+    background-image: url("../media/Background.png");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+@media screen and (min-width:1024px) {
+    html {
+        background-attachment: none;
+        background-size: cover
+    }
+}
+
+#mainRow {}

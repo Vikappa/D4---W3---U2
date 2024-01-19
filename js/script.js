@@ -1,26 +1,13 @@
 const firstButton = document.getElementById('firstButton')
 const secondButton = document.getElementById('secondButton')
 
-const myURL = `https://api.pexels.com/v1/search?query=`
+
+const URL = `https://api.pexels.com/v1/search?query=`
 const screenCards = []
 
-const refreshScreen = function () {
-    console.log(screenCards)
-    document.getElementById('mainRow').innerHTML = ``
-    let innerHtmlCards = ``
-    for (let index = 0; index < screenCards.length; index++) {
-        innerHtmlCards = innerHtmlCards + screenCards[index]
-    }
 
-    document.getElementById('mainRow').innerHTML = innerHtmlCards
-}
-
-const removeCard = function (id) {
-    screenCards.splice(id, 1)
-    refreshScreen()
-}
-
-const getPicWithQuery = function (query) {
+const getPicWithQuery = function (query, myURL) {
+    let pagineScorse = 0
 
     fetch(myURL + query, {
         headers: {
@@ -35,12 +22,10 @@ const getPicWithQuery = function (query) {
             }
         })
         .then((data) => {
-            screenCards.push(
-                buildCard(screenCards.length,
-                    data.photos[Math.floor(Math.random() * 16)].alt,
-                    data.photos[Math.floor(Math.random() * 16)].src.medium)
-            )
-            refreshScreen()
+            pagineScorse++
+
+            console.log(data)
+
             return data
         })
         .catch((err) => {
@@ -49,9 +34,10 @@ const getPicWithQuery = function (query) {
 
 }
 
-const buildCard = function (id, title = "Lorem Ipsum", src = "https://picsum.photos/id/237/300/200") {
+
+const mockupcarta = function (id, title = "Lorem Ipsum", src = "https://picsum.photos/id/237/300/200", picId = "9 min") {
     let mockup =
-        `<div class="col-md-4" id=${id}>
+        `<div class="col-md-4" id="card${id}">
     <div class="card mb-4 shadow-sm">
         <img src="${src}" class="bd-placeholder-img card-img-top" />
         <div class="card-body">
@@ -70,7 +56,7 @@ const buildCard = function (id, title = "Lorem Ipsum", src = "https://picsum.pho
                         Hide
                     </button>
                 </div>
-                <small class="text-muted">9 mins</small>
+                <small class="text-muted">${picId}</small>
             </div>
         </div>
     </div>
@@ -80,13 +66,7 @@ const buildCard = function (id, title = "Lorem Ipsum", src = "https://picsum.pho
 }
 
 const pageFirstLoad = function () {
-    let innerHtmlCards = ``
-    for (let index = 0; index < 15; index++) {
-        screenCards.push(buildCard(index))
-        innerHtmlCards = innerHtmlCards + screenCards[index]
-    }
 
-    document.getElementById('mainRow').innerHTML = innerHtmlCards
 }
 
 
@@ -100,4 +80,9 @@ secondButton.addEventListener('click', function () {
     getPicWithQuery("Ghost")
 })
 
-pageFirstLoad()
+document.getElementById("inputRicerca").addEventListener("input", function () {
+    console.log(document.getElementById("inputRicerca").value)
+})
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+getPicWithQuery("ufo", URL)

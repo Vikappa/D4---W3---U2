@@ -1,0 +1,21 @@
+#logoImg {
+
+    height: 50px;
+}
+
+@media screen and (min-width: 768px) {
+    #logoImg {
+
+        height: 80px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #logoImg {
+
+        height: 120px;
+    }
+
+
+
+}
