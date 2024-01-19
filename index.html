@@ -32,13 +32,17 @@
 
                 <img src="./media/logog.png" id="logoImg" class="col-8 col-md-12 mx-auto m-0 p-0">
 
-                <form>
+                <form id="ricerca">
                     <div class="mb-3">
                         <label for="campoRicerca" class="form-label m-1"><img class="me-1" src="./media/cerca.png"
                                 height="18px">Ricerca:</label>
-                        <input type="text" class="form-control" id="campoRicerca" aria-describedby="emailHelp"
-                            placeholder="Cerca..">
-
+                        <div>
+                            <input type="text" class="form-control" id="campoRicerca" aria-describedby="emailHelp"
+                                placeholder="Cerca..">
+                            <div class="d-grid gap-2 d-md-block">
+                                <button class="btn btn-primary" type="submit">Cerca</button>
+                            </div>
+                        </div>
                     </div>
 
                 </form>
@@ -63,16 +67,17 @@
                 id="mobileNavbar">
                 <div class="container-fluid">
                     <a class="navbar-brand"><img src="./media/logog.png" width="62px"></a>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button type="button" class="btn btn-outline-primary" type="submit">Primary</button>
+                    <form class="d-flex" role="search" id="mobileSearch">
+                        <input class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search"
+                            id="mobileCasella">
+                        <button type="button" class="btn btn-outline-primary" type="submit">Cerca</button>
                     </form>
                 </div>
             </nav>
 
 
             <main class="col m-0 p-0 bg-transparent">
-                <div class="" id="mainRow">
+                <div class="d-flex flex-wrap" id="mainRow">
 
 
                 </div>

@@ -31,8 +31,7 @@ class pexelPhoto {
         <div class="card-img-overlay">
           <h5 class="card-title">${this.alt}</h5>
           <p class="card-text">Autore:${this.photographer}</p>
-          <p class="card-text">Visita il suo blog:${this.photographer_url}</p>
-
+          <p class="card-text">Visita il suo blog: <a class="text-primary" href="${this.photographer_url}">${this.photographer_url}</a></p>
           <p class="card-text"><small>id: ${this.id}</small></p>
         </div>
       </div>`
@@ -117,3 +116,13 @@ const pageFirstLoad = function () {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 pageFirstLoad()
+
+document.getElementById('ricerca').addEventListener('submit', function () {
+    getPicWithQuery(document.getElementById('campoRicerca').value, URL)
+
+})
+
+document.getElementById('mobileSearch').addEventListener('submit', function () {
+    getPicWithQuery(document.getElementById('mobileCasella').value, URL)
+
+})
