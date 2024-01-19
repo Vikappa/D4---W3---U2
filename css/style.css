@@ -1,14 +1,4 @@
-html {
-    background-image: url("../media/Background.png");
-    background-attachment: fixed;
-    background-size: cover;
+.card {
+    height: 300px;
+    width: 400px;
 }
-
-@media screen and (min-width:1024px) {
-    html {
-        background-attachment: none;
-        background-size: cover
-    }
-}
-
-#mainRow {}

@@ -1,21 +1,41 @@
-#logoImg {
+html {
+    background-image: url("../media/Background.png");
+    background-attachment: fixed;
+    background-size: cover;
+}
 
-    height: 50px;
+#mainRow {
+    margin-top: 70px;
 }
 
 @media screen and (min-width: 768px) {
-    #logoImg {
 
-        height: 80px;
+    #multidirectionNavbar {
+        display: flex !important;
+        flex-direction: column !important;
+        height: 103vh !important;
+    }
+
+    #mainRow {
+        margin: 20px 8px 10px 8px;
+    }
+
+}
+
+@media screen and (min-width:1024px) {
+    html {
+        background-attachment: none !important;
+        background-size: cover !important;
     }
 }
 
-@media screen and (min-width: 992px) {
-    #logoImg {
 
-        height: 120px;
-    }
-
+#mobileNavbar {
+    width: 103vw !important;
+}
 
 
+.svg-inline {
+    display: inline;
+    height: 20px;
 }

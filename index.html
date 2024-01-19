@@ -10,51 +10,82 @@
     <meta property="og:title" content="Pexel Scraper">
     <meta property="og:description" content="Motore di ricerca immagini Pexel di Vincenzo Costantini">
     <meta property="og:image" content="url_immagine.jpg">
-    <meta property="og:url" content="https://www.tuosito.com">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:url" content="https://vikappa.github.io/D4---W3---U2/">
+    <meta name="twitter:card"
+        content="https://raw.githubusercontent.com/Vikappa/D4---W3---U2/main/media/Pexel%20scraper.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="icon" href="./media/cerca.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./media/cerca.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href=".//css/variabili.css">
     <link rel="stylesheet" href="./css/responsivity.css">
-    <title>Document</title>
+    <title>Pexel Scraper</title>
 </head>
 
-<body class="bg-transparent container w-100 m-0 p-0 col">
-    <div class="row">
+<body class="bg-transparent m-0 p-0" style="width: 100vw;">
+    <div class="container m-0 p-0">
 
-        <nav class="d-flex flex-column">
-            <img src="./media/logog.png" id="logoImg">
+        <div class="row p-0 m-0">
 
-        </nav class="col-2">
+            <div class="d-none col-2 col-md-3 bg-white mx-auto m-md-0 p-3 flex-1" id="multidirectionNavbar">
 
-        <main class="container col-10 bg-transparent">
-            <div class="row" id="mainRow">
+                <img src="./media/logog.png" id="logoImg" class="col-8 col-md-12 mx-auto m-0 p-0">
 
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                <form>
+                    <div class="mb-3">
+                        <label for="campoRicerca" class="form-label m-1"><img class="me-1" src="./media/cerca.png"
+                                height="18px">Ricerca:</label>
+                        <input type="text" class="form-control" id="campoRicerca" aria-describedby="emailHelp"
+                            placeholder="Cerca..">
+
                     </div>
+
+                </form>
+
+                <div class="list-group m">
+                    <a href="#" class="list-group-item list-group-item-action  d-flex align-items-center"
+                        aria-current="true">
+                        <img class="me-1" src="./media/photo.png" height="32px">Lista preferiti
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action  d-flex align-items-center"><img
+                            class="me-1" src="./media/download.png" height="32px">Scarica preferiti</a>
+                    <a href="#" class="list-group-item list-group-item-action  d-flex align-items-center"><img
+                            class="me-1" src="./media/cerca.png" height="32px">A third link item</a>
+                    <a href="#" class="list-group-item list-group-item-action  d-flex align-items-center"><img
+                            class="me-1" src="./media/cerca.png" height="32px">A fourth link item</a>
+                    <a class="list-group-item list-group-item-action  d-flex align-items-center disabled"
+                        aria-disabled="true">A disabled link item</a>
+                </div>
+            </div>
+
+            <nav class="navbar d-md-none col-10 col-md-9 position-absolute fixed-top bg-body-tertiary"
+                id="mobileNavbar">
+                <div class="container-fluid">
+                    <a class="navbar-brand"><img src="./media/logog.png" width="62px"></a>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button type="button" class="btn btn-outline-primary" type="submit">Primary</button>
+                    </form>
+                </div>
+            </nav>
+
+
+            <main class="col m-0 p-0 bg-transparent">
+                <div class="" id="mainRow">
+
+
                 </div>
 
 
-            </div>
+            </main>
 
-
-        </main>
+        </div>
     </div>
-
-
-
-
+    <script src="./js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-
 </body>
 
 </html>
